@@ -109,7 +109,7 @@
         <p></p>
         <h2 class="text-center">Woden Public Realm Improvements Works Package<br>1 Including Lift & Stairs.</h2>
         <div class="d-flex justify-content-center">
-          <button>More</button>
+          <button class="look-more"><span>More</span></button>
         </div>
       </div>
     </div>
