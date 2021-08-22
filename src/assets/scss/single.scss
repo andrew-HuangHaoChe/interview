@@ -109,3 +109,35 @@
         }
     }
 }
+.single-fish {
+    margin-bottom: 120px;
+    position: relative;
+    .col-md-5 {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .fish-content {
+            background-color: #fff;
+            margin-left: -250px;
+            z-index: 3;
+            padding: 86px 0 0 50px;
+            p {
+                position: relative;
+                &:after {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    height: 2px;
+                    width: 23px;
+                    background-color: #000;
+                    top: -12px;
+                    left: 0;
+                }
+            }
+        }
+    }
+    &::before {
+        position: absolute;
+        display: block;
+    }
+}

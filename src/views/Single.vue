@@ -51,7 +51,9 @@
             <img src="../assets/img/single/fish.png" alt="">
           </div>
           <div class="col-12 col-md-5">
-            <p class="mb-0">The nominated works were described as the partial demolition of the upper and lower area including overhead walkway and roof slab, public toilets and cafe and the construction of new stairs and provision of an external public lift at the Woden Bus Interchange.The nominated works were described as the partial demolition of the upper and lower area including overhead walkway and roof slab, public toilets and cafe and the construction of new stairs and provision of an external public lift at the Woden Bus Interchange.</p>
+            <div class="fish-content">
+              <p class="mb-0">The nominated works were described as the partial demolition of the upper and lower area including overhead walkway and roof slab, public toilets and cafe and the construction of new stairs and provision of an external public lift at the Woden Bus Interchange.The nominated works were described as the partial demolition of the upper and lower area including overhead walkway and roof slab, public toilets and cafe and the construction of new stairs and provision of an external public lift at the Woden Bus Interchange.</p>
+            </div>
           </div>
         </div>
       </div>
