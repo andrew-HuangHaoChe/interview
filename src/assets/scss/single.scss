@@ -1,0 +1,111 @@
+.single-header {
+    background-image: url('~@/assets/img/single/banner.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 780px;
+}
+.h100 {
+    height: 100px;
+}
+.single-h1 {
+    box-shadow: none;
+    border-top: 4px solid #000;
+}
+.single-award {
+    padding: 95px 0 45px 0;
+    margin-bottom: 77px;
+    h2 {
+        position: relative;
+        font-weight: 500;
+        font-size: $font-xl * 2;
+        line-height: 55px;
+        z-index: 2;
+        &:after {
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            display: block;
+            content: '';
+            height: 2px;
+            width: 280px;
+            background: #000;
+        }
+    }
+    h3 {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 36px;
+        color: #323739;
+        margin-bottom: 30px;
+    }
+    h5 {
+        color: #9B9B9B;
+        font-size: $font-sm;
+        line-height: 26px;
+        position: relative;
+        &:after {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -10px;
+            content: '';
+            background: #000;
+            height: 2px;
+            width: 23px;
+        }
+    }
+    p {
+        font-size: $font-sm;
+        line-height: 26px;
+        margin-bottom: 0;
+    }
+    .row {
+        .col-6:first-child {
+            margin-bottom: 35px;
+        }
+        .col-6:nth-child(2) {
+            margin-bottom: 35px;
+        }
+    }
+}
+.b-text {
+    position: absolute;
+    left: -60px;
+    bottom: 15px;
+    font-size: 260px;
+    line-height: 300px;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: #e0e0e0;
+    &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        background: #e0e0e0;
+        width: 120px;
+        height: 15px;
+        top: -40px;
+        left: 20px;
+    }
+}
+.single-intro {
+    margin-bottom: 120px;
+    .col-md-7 {
+        h5 {
+            color: #9B9B9B;
+            font-size: $font-sm;
+            line-height: 26px;
+        }
+        p {
+            font-size: $font-sm;
+            line-height: 26px;
+        }
+    }
+    .col-md-5 {
+        img {
+            max-width: 500px;
+            width: 100%;
+        }
+    }
+}
