@@ -26,9 +26,9 @@
                 <li>Taipei City 111, Taiwan</li>
               </ul>
               <ul class="d-flex list-unstyled mb-0">
-                <li><img src="./assets/img/index/facebook.svg" alt="facebook"></li>
-                <li><img src="./assets/img/index/instagram.svg" alt="instagram"></li>
-                <li><img src="./assets/img/index/youtube.svg" alt="youtube"></li>
+                <li><a target="blank" href="https://www.facebook.com/blockstudiotw"><img src="./assets/img/index/facebook.svg" alt="facebook"></a></li>
+                <li><a target="blank" href="https://www.instagram.com/blockstudiotw/"><img src="./assets/img/index/instagram.svg" alt="instagram"></a></li>
+                <li><a target="blank" href="https://www.youtube.com/watch?v=ptnYBctoexk&list=RD6Fo7IABuAFU"><img src="./assets/img/index/youtube.svg" alt="youtube"></a></li>
               </ul>
             </div>
           </div>
