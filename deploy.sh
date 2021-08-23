@@ -14,6 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 # 部署到 https://andrew-HuangHaoChe.github.io/interview
-git push -f git@github.com:andrew-HuangHaoChe/interview.git master:gh-pages
+git push -f https://github.com/andrew-HuangHaoChe/interview.git master:gh-pages
 
 cd -
