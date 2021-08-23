@@ -11,6 +11,18 @@
 .single-h1 {
     box-shadow: none;
     border-top: 4px solid #000;
+    h1 {
+        &:hover {
+            color: #1d1d1d;
+            border-top: 4px solid #1d1d1d;
+        }
+    }
+    a {
+        color: #000 !important;
+        &:hover {
+            color: #2f2f2f !important;
+        }
+    }
 }
 .single-award {
     padding: 95px 0 45px 0;

@@ -35,6 +35,34 @@
                 font-size: $font-xl;
                 line-height: 26px;
                 text-decoration: none;
+                position: relative;
+                &:before, &:after {
+                    position: absolute;
+                    opacity: 0;
+                    color: #fff;
+                    top: -1px;
+                    transition: all .5s;
+                }
+                &:before {
+                    content: "[";
+                    left: -5px;
+                }
+                &:after {
+                    content: "]";
+                    right: -5px;
+                }
+                &:hover {
+                    &:before, &:after {
+                        opacity: 0.7;
+                        z-index: 10000;
+                    }
+                    &:before {
+                        left: -15px;
+                    }
+                    &:after {
+                        right: -15px;
+                    }
+                }
             }
         }
         h4 {
@@ -119,15 +147,41 @@ h1 {
     display: flex;
     align-items: center;
     .nav-block {
-        a {
-            color: #fff;
-            text-decoration: none;
-            padding-left: 60px;
-            font-size: $font-lg;
+        ul {
+            margin-bottom: 0;
+            li {
+                a {
+                    padding: 15px;
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: $font-lg;
+                }
+            }
         }
     }
 }
 .nav-pc {
+    position: relative;
+    transition: all .6s ease-in-out;
+    &:after {
+        position: absolute;
+        transition: all .6s;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: '.';
+        color: transparent;
+        background: #aaa;
+        height: 1px;
+    }
+    &:hover{
+        color: #999999 !important;
+        &:after {
+            width: 100%;
+        }
+    }
     @media(max-width: 576px) {
         display: none;
     }
@@ -298,6 +352,10 @@ h1 {
         font-weight: bold;
         font-size: 60px;
         line-height: 64px;
+        @media(max-width: 768px) {
+            font-size: 40px;
+            line-height: 44px;
+        }
         @media(max-width: 576px) {
             font-size: $font-xl;
             line-height: 28px;
@@ -331,10 +389,44 @@ h1 {
         line-height: 26px;
     }
 }
+.anim-typewriter {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid rgba(255,255,255,.75);
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+.anim-typewriter-2 {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid rgba(255,255,255,.75);
+    animation: typewriter 8s steps(44) 4s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+        border-right: 0;
+    }
+}
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255,255,255,.75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
 .scroll {
     position: relative;
     margin-top: -84px;
     font-size: $font-sm;
+    cursor: pointer;
     &:after {
         position: absolute;
         top: 40px;
@@ -345,18 +437,42 @@ h1 {
         height: 60px;
         background-color: #fff;
     }
+    &:hover {
+        &:after {
+            -webkit-animation: sdb05 1.5s infinite;
+            animation: sdb05 1.5s infinite;
+        }
+    }
+}
+@keyframes sdb05 {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
 }
 .social-btn-group {
     position: absolute;
     bottom: 0;
     ul {
         li {
+            cursor: pointer;
             width: 20px;
             height: 20px;
             line-height: 20px;
             padding-right: 66px;
+            transition: all .3s ease;
             @media(max-width: 375px) {
                 padding-right: 30px;
+            }
+            &:hover {
+                transform: scale(1.2);
             }
         }
     }

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="custom-wrapper">
-      <div class="header" :class="{ 'single-header': pageType == 'single' }">
+      <div class="header" :class="{ 'single-header': pageType == 'single' }" ref="header">
         <transition name="opacity">
           <div class="side-backdrop" v-if="burgerStatus" @click="burgerStatus = false"></div>
         </transition>
@@ -13,9 +13,9 @@
               </a> -->
             </div>
             <ul class="mb-0 list-unstyled side-content">
-              <li><router-link class="text-white" to="/">About</router-link></li>
-              <li><router-link class="text-white" to="/single">Website</router-link></li>
-              <li><router-link class="text-white" to="/single">Branding</router-link></li>
+              <li><a href="#" @click.prevent="sideRoute('/')" class="text-white">About</a></li>
+              <li><a href="#" @click.prevent="sideRoute('/single')" class="text-white">Website</a></li>
+              <li><a href="#" @click.prevent="sideRoute('/single')" class="text-white">Branding</a></li>
               <h4>B</h4>
             </ul>
             <div class="side-footer">
@@ -34,11 +34,13 @@
           </div>
         </transition>
         <div class="nav p-4 d-flex align-items-center" :class="{ 'h100': pageType !== 'index', 'bg-white': pageType == 'single' }">
-          <h1 class="me-auto mb-0" :class="{ 'single-h1': pageType == 'single' }"><router-link to="/" :class="{ 'text-black': pageType == 'single' }">B</router-link></h1>
+          <h1 class="me-auto mb-0" :class="{ 'single-h1': pageType == 'single' }"><router-link to="/">B</router-link></h1>
           <div class="d-flex align-items-center nav-block">
-            <router-link :class="{ 'text-dark': pageType == 'single' }" class="nav-pc" to="/">About</router-link>
-            <router-link :class="{ 'text-dark': pageType == 'single' }" class="nav-pc" to="/single">Website</router-link>
-            <router-link :class="{ 'text-dark': pageType == 'single' }" class="nav-pc" to="/single">Branding</router-link>
+            <ul class="d-flex list-unstyled">
+              <li><router-link :class="{ 'text-dark': pageType == 'single' }" class="nav-pc" to="/">About</router-link></li>
+              <li><router-link :class="{ 'text-dark': pageType == 'single' }" class="nav-pc" to="/single">Website</router-link></li>
+              <li><router-link :class="{ 'text-dark': pageType == 'single' }" class="nav-pc" to="/single">Branding</router-link></li>
+            </ul>
             <p class="burger-transparent"></p>
             <a class="burger" href="#" :class="{ 'active': burgerStatus == true, 'light-burger': pageType == 'single' }" @click.prevent="burgerStatus = !burgerStatus">
               <i></i>
@@ -49,7 +51,8 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 d-flex flex-column h-100 align-items-center">
-                <h2 class="text-center">Commercial builders with pride – <br> workmanship that values quality.</h2>
+                <h2 class="text-center anim-typewriter">Commercial builders with pride –</h2>
+                <h2 class="text-center anim-typewriter-2">workmanship that values quality.</h2>
                 <p class="text-center sub-title">Acclaim Contractors are a highly specialised local business with over 20 years building and civil industry<br>
                   experience with many accolades, commendations and awards recognising their workmanship.Acclaim<br>
                   Contractors are a highly specialised local business with over 20 years building .
@@ -60,15 +63,15 @@
           </div>
           <div class="social-btn-group p-4 d-flex w-100">
             <ul class="list-unstyled d-flex mb-0">
-              <li><img src="./assets/img/index/facebook.svg" alt=""></li>
-              <li><img src="./assets/img/index/instagram.svg" alt=""></li>
-              <li><img src="./assets/img/index/youtube.svg" alt=""></li>
+              <li><a target="blank" href="https://www.facebook.com/blockstudiotw"><img src="./assets/img/index/facebook.svg" alt="facebook"></a></li>
+              <li><a target="blank" href="https://www.instagram.com/blockstudiotw/"><img src="./assets/img/index/instagram.svg" alt="instagram"></a></li>
+              <li><a target="blank" href="https://www.youtube.com/watch?v=_NGQfFCFUn4&list=RDLKJZQ7dbu14"><img src="./assets/img/index/youtube.svg" alt="youtube"></a></li>
             </ul>
-            <span class="scroll mb-0">Scroll</span>
+            <span class="scroll mb-0" @click="scrollToWorks">Scroll</span>
           </div>
         </div>
       </div>
-      <router-view class="custom-main"/>
+      <router-view class="custom-main" id="custom-main"/>
       <div class="custom-footer">
         <Footer />
       </div>
@@ -87,6 +90,21 @@ export default {
       burgerStatus: false,
       indexBanner: image,
       pageType: ''
+    }
+  },
+  methods: {
+    scrollToWorks () {
+      document.getElementById('custom-main').scrollIntoView({
+        behavior: 'smooth'
+      })
+    },
+    sideRoute (route) {
+      this.burgerStatus = false
+      if (route === '/') {
+        this.$router.push('/')
+      } else {
+        this.$router.push('/single')
+      }
     }
   },
   created () {

@@ -17,15 +17,18 @@ footer {
     }
     .footer-link {
         li {
-            color: #fff;
             font-size: $font-lg;
             line-height: 21px;
             padding-right: 120px;
-            @media(max-width: 576px) {
+            @media(max-width: 768px) {
                 padding-right: 60px;
             }
             @media(max-width: 375px) {
                 padding-right: 30px;
+            }
+            a {
+                color: #fff;
+                text-decoration: none;
             }
         }
     }
@@ -47,6 +50,16 @@ footer {
             @media(max-width: 576px) {
                 padding: 0 30px 10px 0;
             }
+            a {
+                img {
+                    transition: all .3s ease;
+                }
+            }
+            &:hover {
+                img {
+                    transform: scale(1.2);
+                }
+            }
         }
     }
 }
@@ -59,4 +72,22 @@ footer {
     line-height: 26px;
     padding: 8px 0;
     margin-bottom: 0;
+}
+.scrollToTop {
+    visibility: hidden;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #aaa;
+    cursor: pointer;
+    transition: all .2s;
+    i {
+        width: 100%;
+        color: #fff;
+        line-height: 50px;
+        text-align: center;
+        font-size: 24px;
+    }
 }
